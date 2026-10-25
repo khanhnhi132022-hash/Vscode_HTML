@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beautiful Woman 🌹</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: radial-gradient(ellipse at center, #19050e 0%, #080308 55%, #000 100%);
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 15% 20%, #fff 50%, transparent),
+        radial-gradient(1px 1px at 80% 15%, #ffb7c5 50%, transparent),
+        radial-gradient(2px 2px at 65% 75%, #fff 50%, transparent),
+        radial-gradient(1px 1px at 30% 80%, #ff496d 50%, transparent),
+        radial-gradient(2px 2px at 90% 60%, #fff 50%, transparent);
+    background-size: 240px 240px;
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .25; }
+    to { opacity: 1; }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    padding: 35px 18px;
+}
+
+.subtitle {
+    color: #f6c8d2;
+    letter-spacing: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #ffe5ec;
+    font-size: clamp(27px, 5vw, 48px);
+    font-weight: normal;
+    text-shadow: 0 0 25px #ff174d;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #d7a7b5;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.bouquet {
+    position: relative;
+    width: 330px;
+    height: 350px;
+    max-width: 90vw;
+    margin: 20px auto 0;
+}
+
+/* Cành hoa */
+.stem {
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    width: 4px;
+    height: 180px;
+    background: linear-gradient(to right, #17351d, #6baf60, #142b18);
+    transform: translateX(-50%) rotate(-5deg);
+    transform-origin: top;
+    border-radius: 10px;
+}
+
+.leaf {
+    position: absolute;
+    width: 65px;
+    height: 29px;
+    background: linear-gradient(135deg, #376c37, #102b19);
+    border-radius: 100% 0 100% 0;
+    border: 1px solid #638e4e;
+}
+
+.leaf.left {
+    top: 225px;
+    left: 105px;
+    transform: rotate(20deg);
+}
+
+.leaf.right {
+    top: 260px;
+    right: 95px;
+    transform: rotate(190deg);
+}
+
+/* Bông hoa có thể nhấn */
+.flower {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(0 0 13px #e6315b66);
+    transition: transform .5s, filter .5s;
+    animation: bloom 2s ease-out both, float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.flower:hover {
+    transform: scale(1.13);
+    filter: drop-shadow(0 0 25px #ea6483);
+}
+
+.flower:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 8px;
+    border-radius: 50%;
+}
+
+.flower.one {
+    left: 100px;
+    top: 0;
+    animation-delay: .2s;
+}
+
+.flower.two {
+    left: 15px;
+    top: 55px;
+    transform: scale(.82) rotate(-15deg);
+    animation-delay: .5s;
+}
+
+.flower.three {
+    right: 15px;
+    top: 55px;
+    transform: scale(.82) rotate(15deg);
+    animation-delay: .8s;
+}
+
+@keyframes bloom {
+    0% { opacity: 0; scale: .1; }
+    100% { opacity: 1; scale: 1; }
+}
+
+@keyframes float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -7px; }
+}
+
+/* Những cánh hoa hồng */
+.petal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 45px;
+    height: 68px;
+    transform-origin: 50% 88%;
+    border-radius: 50% 50% 42% 42%;
+    background:
+        radial-gradient(ellipse at 35% 25%,
+            #ffb2c1 0%, #ff456e 22%,
+            #c70036 60%, #5d001b 100%);
+    border: 1px solid #ff718f88;
+    box-shadow: inset 0 0 8px #ffb3c966;
+    margin-left: -22px;
+    margin-top: -53px;
+    transition: transform .7s ease;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-9px); }
+.petal:nth-child(2) { transform: rotate(45deg) translateY(-9px); }
+.petal:nth-child(3) { transform: rotate(90deg) translateY(-9px); }
+.petal:nth-child(4) { transform: rotate(135deg) translateY(-9px); }
+.petal:nth-child(5) { transform: rotate(180deg) translateY(-9px); }
+.petal:nth-child(6) { transform: rotate(225deg) translateY(-9px); }
+.petal:nth-child(7) { transform: rotate(270deg) translateY(-9px); }
+.petal:nth-child(8) { transform: rotate(315deg) translateY(-9px); }
+
+/* Hình bóng cô gái trên cánh hoa */
+.girl {
+    position: absolute;
+    inset: 8px 7px 9px;
+    overflow: hidden;
+    border-radius: 50% 50% 40% 40%;
+    background: linear-gradient(145deg, #ffd8df, #a71841 70%);
+    opacity: .75;
+}
+
+.girl::before {
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 23px;
+    border-radius: 48% 48% 45% 45%;
+    background: #230913;
+    top: 10px;
+    left: 6px;
+    box-shadow: -4px -3px 0 2px #16070d;
+}
+
+.girl::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 35px;
+    border-radius: 50% 50% 10% 10%;
+    background: #230913;
+    top: 32px;
+    left: -1px;
+}
+
+.center {
+    position: absolute;
+    z-index: 5;
+    width: 31px;
+    height: 31px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ffdca0, #d99534 45%, #70330b);
+    box-shadow: 0 0 15px #ffbf54;
+    border: 2px solid #ffdd93;
+}
+
+.hint {
+    color: #f4c1d0;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-top: -2px;
+    animation: twinkle 2s infinite alternate;
+}
+
+/* Hộp lời chúc */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #000000dd;
+    backdrop-filter: blur(8px);
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeIn .5s ease;
+}
+
+.message {
+    width: 100%;
+    max-width: 480px;
+    padding: 38px 25px;
+    border: 1px solid #d94a6d;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #290813, #090308);
+    box-shadow: 0 0 55px #d4144b44;
+    animation: rise .6s ease;
+}
+
+.message .rose {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.message h2 {
+    color: #ffb6ca;
+    font-weight: normal;
+    font-size: 29px;
+    margin-bottom: 18px;
+}
+
+.message p {
+    color: #f8e3e9;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.signature {
+    margin-top: 20px;
+    color: #f3b7c7;
+    font-style: italic;
+}
+
+.close {
+    margin-top: 25px;
+    padding: 11px 28px;
+    color: white;
+    background: #a90e3a;
+    border: 1px solid #ff829e;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.close:hover {
+    background: #ec285b;
+    box-shadow: 0 0 20px #f32b60;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rise {
+    from { transform: translateY(25px) scale(.9); }
+    to { transform: translateY(0) scale(1); }
+}
+
+footer {
+    color: #926c7b;
+    font-size: 12px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 400px) {
+    .bouquet {
+        transform: scale(.88);
+        transform-origin: top center;
+        margin-bottom: -35px;
+    }
+
+    .message h2 { font-size: 25px; }
+}
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<main class="container">
+    <p class="subtitle">A little gift from the heart</p>
+
+    <h1>For Every Beautiful Woman</h1>
+
+    <p class="description">
+        Mỗi người phụ nữ là một bông hoa.<br>
+        Mỗi vẻ đẹp đều xứng đáng được trân trọng.
+    </p>
+
+    <section class="bouquet" aria-label="Bó hoa hồng">
+
+        <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+
+        <button class="flower one" aria-label="Mở lời chúc thứ nhất"
+                onclick="openWish(0)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+
+        <button class="flower two" aria-label="Mở lời chúc thứ hai"
+                onclick="openWish(1)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+
+        <button class="flower three" aria-label="Mở lời chúc thứ ba"
+                onclick="openWish(2)">
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="petal"><span class="girl"></span></span>
+            <span class="center"></span>
+        </button>
+    </section>
+
+    <p class="hint">✦ CHẠM VÀO MỘT BÔNG HOA ĐỂ NHẬN LỜI CHÚC ✦</p>
+
+    <footer>
+        MADE WITH LOVE · TO ALL WOMEN 🌹
+    </footer>
+</main>
+
+<div class="modal" id="wishModal" role="dialog"
+     aria-modal="true" aria-labelledby="wishTitle"
+     onclick="closeOutside(event)">
+    <div class="message">
+        <div class="rose">🌹</div>
+        <h2 id="wishTitle">Gửi những đóa hồng xinh đẹp</h2>
+        <p id="wishText"></p>
+        <div class="signature">You deserve all the beautiful things. ♡</div>
+        <button class="close" onclick="closeWish()">Khép lại bằng một nụ cười ✨</button>
+    </div>
+</div>
+
+<script>
+const wishes = [
+    {
+        title: "Gửi chị Ánh Ngọc",
+        text: "Chúc chị luôn xinh đẹp theo cách riêng của mình, hạnh phúc trong từng khoảnh khắc, tự tin theo đuổi ước mơ và luôn được yêu thương, trân trọng. Mong cuộc đời dịu dàng với chị như cách chị làm thế giới trở nên ấm áp hơn. 💗"
+    },
+    {
+        title: "Gửi chị Khánh Linh",
+        text: "Chúc chị luôn có đủ mạnh mẽ để bước qua thử thách, đủ dịu dàng để yêu thương bản thân và đủ can đảm để sống cuộc đời mình mong muốn. Đừng quên rằng giá trị của chị không nằm trong ánh nhìn của bất kỳ ai, mà ở chính con người tuyệt vời chị đang trở thành. ✨"
+    },
+    {
+        title: "Gửi chị Ngân Trâm",
+        text: "Chúc chị luôn bình an, luôn vững vàng, luôn rực rỡ và luôn có quyền được lựa chọn, được lắng nghe và được sống là chính mình. Mong mỗi ngày đều mang đến cho chị một lý do để mỉm cười. 🌷"
+    }
+];
+
+function openWish(index) {
+    document.getElementById("wishTitle").textContent =
+        wishes[index].title;
+
+    document.getElementById("wishText").textContent =
+        wishes[index].text;
+
+    document.getElementById("wishModal").classList.add("show");
+}
+
+function closeWish() {
+    document.getElementById("wishModal").classList.remove("show");
+}
+
+function closeOutside(event) {
+    if (event.target.id === "wishModal") {
+        closeWish();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeWish();
+});
+</script>
+</body>
+</html>
